@@ -6,7 +6,7 @@ Trên wikipedia, network được định nghĩa như sau: "A computer network i
 
 2. Client and server
 
-Clients đuọc định nghĩa là một thiết bị có thể tiếp hoặc kết nối một dịch vụ vào đó được thực hiển bởi server.
+Clients được định nghĩa là một thiết bị có thể tiếp hoặc kết nối một dịch vụ vào đó được thực hiển bởi server.
 
 Server là một thiết bị cung cấp những chức năng hoặc dịch vụ dành cho các clients. 
 
