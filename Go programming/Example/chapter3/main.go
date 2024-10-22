@@ -8,4 +8,6 @@ import (
 func main(){
 	now := time.Now()
 	fmt.Println(now)
+	fmt.Println("Hello World")
 }
+// 
