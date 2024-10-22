@@ -54,3 +54,35 @@ There are two types of programming languages:
 2. High level
 
 Low level programming languages are closer to the processing unit's instructions. Higher-level languages provide constructs that make them easier to learn and to use. Some high-level languages are compiled, others are interpreted and some are in between. When source files are written, the program that they define cannot be executed immediately. The source file needs to be compiled by using a compiler. The compiled will transform source files into an executable. 
+
+## Chapter 2: The Go language
+
+Go was born inside a Google office. Go is an open-source programming language maintanined by its community and a core team of developers working at Google. 
+
+The **objective** of the first Gophers was to make the life of developers easier by: 
+- Reducing the build time of programs drastically
+- Designing an effective dependency management system
+- Building a language that can produce software that scale well on hardware.
+
+### Go key features
+
+- **Concurrency**: A program is concurrent when tasks can be executed out-of-order or in a partial order.
+
+- **Garbage collector**: When we build programs, we need to store data and fetch data from memory. Memory is not an infinite resource. Therefore, the developer must ensure that unused elements stored in memory are destroyed from time to time. The garbage collector's role is to deallocate memory when it is not used anymore. When the language does not have GC. developer has to collect his garbage and free memory that is no longer used.
+## Chapter 3: First Go application
+Let's create our source file and name it **main.go**
+```
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    now := time.Now()
+    fmt.Println(now)
+}
+```
+
+In all files, you must add the **package** declaration. 
