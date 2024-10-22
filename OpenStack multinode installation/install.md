@@ -110,6 +110,8 @@ After set up multinode file, we have to create key-pair for running ansible.
 ## Some error occurred when using this guide: 
 
 1. Do not using host-only network interface when setup by VMware -> port-binding error caused  (host-only is private network).
+2. When creating a lab environment in OSP (OpenStack in OpenStack), We must add address pair for VIP IP.
+3. Remember remove OVS if it exists in your VMs.
 ## References: 
 [Openstack install kolla-ansible](https://docs.openstack.org/kolla-ansible/latest/user/quickstart.html)
 

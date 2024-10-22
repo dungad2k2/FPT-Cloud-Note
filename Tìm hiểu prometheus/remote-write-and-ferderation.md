@@ -1,4 +1,4 @@
-# File cáu hình thực hiện cấu hình ferderation và remote write trong Prometheus
+# File cấu hình thực hiện cấu hình ferderation và remote write trong Prometheus
 
 ```
 global:
