@@ -54,3 +54,118 @@ There are two types of programming languages:
 2. High level
 
 Low level programming languages are closer to the processing unit's instructions. Higher-level languages provide constructs that make them easier to learn and to use. Some high-level languages are compiled, others are interpreted and some are in between. When source files are written, the program that they define cannot be executed immediately. The source file needs to be compiled by using a compiler. The compiled will transform source files into an executable. 
+
+## Chapter 2: The Go language
+
+Go was born inside a Google office. Go is an open-source programming language maintanined by its community and a core team of developers working at Google. 
+
+The **objective** of the first Gophers was to make the life of developers easier by: 
+- Reducing the build time of programs drastically
+- Designing an effective dependency management system
+- Building a language that can produce software that scale well on hardware.
+
+### Go key features
+
+- **Concurrency**: A program is concurrent when tasks can be executed out-of-order or in a partial order.
+
+- **Garbage collector**: When we build programs, we need to store data and fetch data from memory. Memory is not an infinite resource. Therefore, the developer must ensure that unused elements stored in memory are destroyed from time to time. The garbage collector's role is to deallocate memory when it is not used anymore. When the language does not have GC. developer has to collect his garbage and free memory that is no longer used.
+## Chapter 3: First Go application
+### First Go application
+Let's create our source file and name it **main.go**
+```
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    now := time.Now()
+    fmt.Println(now)
+}
+```
+
+In all files, we must add the **package** declaration. On the second line, **import** is usually followed by an open parenthesis and a list of the program's imported packages. Each package has a name delimited by **double-quotes**. Then we find the declaration of a function named **main** that we will go deeper into the syntax of functions later.
+### Compilation
+To transformed into a binary from Go file -> we will use `go build` command.
+```
+go build main.go
+./main //Launch main program from binary file
+```
+
+## Chapter4: Binary, Decimal and Hexadecimal, Octal, ASCII, UTF8, Unicode, Runes
+
+1. Hexadecimal:
+
+   `"%x"` is the formatting verb for hexadecimal -> we can convert from decimal to hexadecimal using `"%x"`. If we want to represent a number in hexadecimal in your code, add `0x` before the numeral
+
+2. Decimal:
+
+    To print the number in base ten, you can use the verd `"%d"`.
+
+3. Octal
+
+    To print the number in Octal using `"%o"`.
+
+    ```
+     package main
+
+     import "fmt"
+
+     func main() {
+       n2 := 0x9F4
+       fmt.Printf("Decimal : %d\n", n2)
+
+       // n3 is represented using the octal numeral system
+       n3 := 02454
+       // alternative : n3 := 0o2454
+
+       // convert in decimal
+       fmt.Printf("decimal: %d\n", n3)
+
+       // n4 is represented using the decimal numeral system
+       n4 := 1324
+       // output n4 (decimal) in octal
+       fmt.Printf("octal: %o\n", n4)
+       // output n4 (decimal) in octal (with a 0o prefix)
+       fmt.Printf("octal with prefix : %O\n", n4)
+
+      }
+    ```
+4. Slice of bytes:
+   
+     With Go, you can create a slice of bytes. Lots of common standard package functions and methods are taking as arguments slice of bytes. 
+
+     ```
+      package main
+
+      import "fmt"
+
+      func main() {
+        b := make([]byte, 0)
+        b = append(b, 255)
+        b = append(b, 10)
+        fmt.Println(b)
+      }
+     ```
+     Golang byte type is an alias of uint8. Unit8 means that we can store unsigned (without any signs, so no negative numbers) integers on 8 bits (a byte) of data. So the minimum value is 0 the maximum value is 255 (2^8 -1). So we can append to a byte slice numbers from 0 to 255. If we try to append a number greater than 255 -> Error.
+
+5. Runes:
+   Each character has a code point.
+   UTF-8 is an encoding technique that can encode more than 1 million characters. With UTF-8, any character is encoded using 1 to 4 bytes.
+   A `rune` represent a Unicode code point:
+     - Unicode code points are numeric values.
+     - By convention, they are always noted with the following format: "U+X" where **X** is hexadecimal representation of the code point and should have four characters.
+   ```
+     package main
+
+     import "fmt"
+
+     func main(){
+       var aRune rune = 'Z'
+       fmt.Printf("Unicode Code point of &#39;%c&#39;: %U\n", aRune, aRune)
+     }
+     // %c represents value of rune type and %U represent value of rune type in hexadecimal.
+   ```
+   **Note**: In Go, strings are immutable, meaning that they cannot be changed once created. 
