@@ -169,3 +169,46 @@ go build main.go
      // %c represents value of rune type and %U represent value of rune type in hexadecimal.
    ```
    **Note**: In Go, strings are immutable, meaning that they cannot be changed once created. 
+
+## Chapter5: Variable, Constants and basic type
+
+### Basic types of variable
+
+The Go language predeclares a set of basic types that you can use right away into your programs. You can also define your types (we will see it later). For the moment, we will focus only on the most used types:
+
+- Character strings: **string**
+- Unsigned integers: **uint**, **uint8**, **uint16**, **uint32**, **uint64**
+- Integers: **int**, **int8**, **int16**, **int32**, **int64**
+- Booleans: **bool**
+- Floating point numbers: **float32**, **float64**
+
+### Variable declaration
+  ```
+     // Variable declaration without an initializer
+     var roomNumber int
+     var roomNumber, floorNumber int
+     // Variable declaration with an initializer
+     var roomNumber int = 123
+     var roomNumber, floorNumber int = 154, 3
+     var roomNumber, floorNumber = 154, 3 -> Type is not written but Go will give the variable the type of the initialization value
+     // Short variable declaration
+     roomNumber := 154
+  ```
+
+### Constants 
+  ```
+    const version string = "1.3.2" // Typed constants
+    const version = "1.3.2" // Untyped constants
+  ```
+  Untyped constants default types are:
+  - bool (for any boolean value)
+  - rune (for any rune value)
+  - int (for any integer value)
+  - float64 (for any floating-point value)
+  - complex128 (for any complex value)
+  - string (for any string value)
+
+
+## Chapter6: Control statements
+
+

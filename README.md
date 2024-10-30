@@ -1,1 +1,1 @@
-# Repo note
+# Repo note in FPT Smart Cloud
