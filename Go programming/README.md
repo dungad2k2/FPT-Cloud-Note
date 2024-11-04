@@ -211,4 +211,65 @@ The Go language predeclares a set of basic types that you can use right away int
 
 ## Chapter6: Control statements
 
+### Control statement in GO
+1. If/else
+   ```
+     package main
 
+     import (
+	     "fmt"
+	     "math/rand"
+      )
+
+     func main() {
+	       ageJohn := rand.Intn(110)
+         agePaul := rand.Intn(110)
+         if ageJohn > agePaul {
+             fmt.Println("John is older than Paul")
+         }else if ageJohn == agePaul {
+             fmt.Println("Paul ans John are the same age")
+         }else{
+             fmt.Println("Paul is older than John")
+         }
+      }
+   ```
+2. Switch case
+   ```
+      package main
+
+      import (
+	      "fmt"
+	      "math/rand"
+      )
+
+      func main() {
+	        agePaul := rand.Intn(100)
+          ageJohn := rand.Intn(100)
+          switch {
+              case agePaul > ageJohn:
+                  fmt.Println("Paul is older than John")
+              case agePaul < ageJohn:
+                  fmt.Println("Paul is younger than John")
+              default:
+                  fmt.Println("Paul and John are of the same age")
+          }
+      }
+   ```
+**Note:** the switch case is **intensively used** into go programs. It's easy to read and the syntax is also easy to learn
+
+3. For statement
+
+  ```
+    package main
+
+    import (
+	   "fmt"
+	   "math/rand"
+    )
+    func main() {
+      a := rand.Intn(10)
+      for i := 0; i < a; i++{
+         fmt.Println("Hello, World!")
+      }
+    }
+  ```
