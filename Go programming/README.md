@@ -259,7 +259,7 @@ The Go language predeclares a set of basic types that you can use right away int
 
 3. For statement
 
-  ```
+    ```
     package main
 
     import (
@@ -272,4 +272,4 @@ The Go language predeclares a set of basic types that you can use right away int
          fmt.Println("Hello, World!")
       }
     }
-  ```
+    ```
