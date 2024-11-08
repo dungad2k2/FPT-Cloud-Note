@@ -258,7 +258,7 @@ The Go language predeclares a set of basic types that you can use right away int
 **Note:** the switch case is **intensively used** into go programs. It's easy to read and the syntax is also easy to learn
 
 3. For statement
-
+    For statement with a for clause
     ```
     package main
 
@@ -273,3 +273,28 @@ The Go language predeclares a set of basic types that you can use right away int
       }
     }
     ```
+  
+   For statement with a singe condition:
+   ```
+      package main
+      import "fmt"
+      func main(){
+        const emailToSend = 3
+        emailSent := 0
+        for emailSent < emailToSend{
+          fmt.Println("sending email..")
+          emailSent++
+        }
+        fmt.Println("end of program")
+      }
+   ```
+## Chapter7: Functions
+
+### Syntax
+
+   ```
+    //
+    func function_name(para1, para2,.....)(result_type){
+       //funtion boby
+    }
+   ```
