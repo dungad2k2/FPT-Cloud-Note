@@ -153,3 +153,6 @@ Packet that is captured by wireshark look similar in 2 mode.
 ## Lab 
 ### Lab1: Create IPSec tunnel by VyOS
 
+Lab environment:
+
+![alt text](image-15.png)
