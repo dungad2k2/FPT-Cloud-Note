@@ -13,10 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kubespray install and issues that I catched.md",
+                "file": "K8s/Kubespray install and issues that I catched.md",
                 "mode": "source",
-                "source": false,
-                "backlinks": false
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Kubespray install and issues that I catched"
@@ -26,14 +25,10 @@
             "id": "100882341424439b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Kubespray install and issues that I catched.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Kubespray install and issues that I catched"
+              "title": "Tab mới"
             }
           },
           {
@@ -48,8 +43,7 @@
               "title": "Release Notes 1.8.7"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -196,12 +190,15 @@
       "command-palette:Mở khay lệnh": false
     }
   },
-  "active": "100882341424439b",
+  "active": "b91073287972ada0",
   "lastOpenFiles": [
     "Hướng dẫn benchmark checkpoint firewall R81.10.md",
+    "Cách tạo vm từ snapshot.md",
+    "K8s/README.md",
+    "K8s/Kubespray install and issues that I catched.md",
+    "README.md",
     "Tìm hiểu về VictoriaMetrics.md",
     "Kubespray install and issues that I catched.md",
-    "Cách tạo vm từ snapshot.md",
     "Image/Pasted image 20250225174451.png",
     "Image/Pasted image 20250210135326.png",
     "Image",
