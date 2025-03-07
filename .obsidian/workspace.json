@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "af68dd479b1a508b",
+    "type": "split",
+    "children": [
+      {
+        "id": "72e22e0a1d9b1887",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b91073287972ada0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubespray install and issues that I catched.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Kubespray install and issues that I catched"
+            }
+          },
+          {
+            "id": "100882341424439b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubespray install and issues that I catched.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Kubespray install and issues that I catched"
+            }
+          },
+          {
+            "id": "695066024d07ba10",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.7"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "17fd23e60fcb872a",
+    "type": "split",
+    "children": [
+      {
+        "id": "d6f8d8446e8444fa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7c77bfd38803c948",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Trình duyệt tệp"
+            }
+          },
+          {
+            "id": "a1f64c76fc19e06a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "fde47e1d8087ebf4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bd9fbed3ac2519c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "8cd743e9d00c151d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dbb8f7647a4026e6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Welcome.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Welcome"
+            }
+          },
+          {
+            "id": "d3df2db37b1a1e78",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Welcome.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Welcome"
+            }
+          },
+          {
+            "id": "dcc09a4f6d084793",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "e726c4bf921f4c74",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Welcome"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Mở bộ chuyển đổi nhanh": false,
+      "graph:Mở xem biểu đồ": false,
+      "canvas:Tạo bảng mới": false,
+      "daily-notes:Mở ghi chú hôm nay": false,
+      "templates:Chèn mẫu": false,
+      "command-palette:Mở khay lệnh": false
+    }
+  },
+  "active": "100882341424439b",
+  "lastOpenFiles": [
+    "Hướng dẫn benchmark checkpoint firewall R81.10.md",
+    "Tìm hiểu về VictoriaMetrics.md",
+    "Kubespray install and issues that I catched.md",
+    "Cách tạo vm từ snapshot.md",
+    "Image/Pasted image 20250225174451.png",
+    "Image/Pasted image 20250210135326.png",
+    "Image",
+    "Image/Pasted image 20250210135725.png",
+    "Image/Pasted image 20250210135541.png",
+    "Image/Pasted image 20250210134726.png",
+    "Image/Pasted image 20250210133645.png",
+    "Image/Pasted image 20250210133527.png",
+    "Image/Pasted image 20250210133511.png",
+    "Image/Pasted image 20250210132540.png",
+    "Image/Pasted image 20250207110628.png",
+    "DungCV.md",
+    "Untitled",
+    "Note Star.md",
+    "Welcome.md"
+  ]
+}
