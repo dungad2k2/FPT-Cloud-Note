@@ -1,0 +1,15 @@
+**Kubeapi server** sẽ chịu trách nhiệm cho việc authenticating, validating request, nhận và update dữ liệu được lưu ở trong ETCD. Thực tế kube-apiserver là thành phần duy nhất tương tác trực tiếp với ETCD. Những components khác như là kube-controller-manager, kube-scheduler và kubelet sử dụng API-servers để cập nhật những thay đổi trong cluster. 
+![[Pasted image 20250415092159.png]]
+**Kube Controller Manager**: Thực hiện tác vụ quản lý các controllers in K8s. Trong K8s, một controller là một process liên tục theo dõi trạng thái của các components trong hệ thống để đưa được ra những actions cụ thể giúp cho ứng dụng trên K8s chạy một cách ổn định 
+
+**Replica Controller**: Chịu trách nhiệm cho việc quan sát trạng thái của `replicaset` và đảm bảo luôn có một số lượng đủ và sẵn sàng trong mọi khoảng thời gian.
+
+Một số controller khác trong hệ thống của K8s:
+![[Pasted image 20250415093051.png]]
+**Kube Scheduler**: Kube Scheduler chịu trách nhiệm cho việc scheduling pods trên các nodes. Kube scheduler chỉ chịu trách nhiệm duy nhất cho việc xác định được pods đang ở trên node nào. Nó không thực hiện việc tạo pod trên node đó mà việc đó thuộc về **kubelet**. Trong một cluster khi mà các nodes đáp ứng đủ các requirements cho một Pod thì node đó được gọi `feasible` nodes. Nếu không nodes nào phù hợp pod sẽ được giữ lại cho đến khi tìm ra được nodes phù hợp cho mình thì thôi. Sau khi tìm thấy được các feasible nodes, scheduler sẽ tiến hành chạy một set các function để tính điểm các feasible node và sau đó chọn một node với điểm số cao nhất trong các feasible node để chạy Pod. Sau đó scheduler sẽ tiến hành gọi tới API serer về quyết định này *binding*. Một số các  yếu tố quyết định đến việc tính điểm và chọn node có thể kể đến như là: hardware / software / policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference,.....
+Việc chọn node của Kube Scheduler sẽ được diễn ra trong 2 giai đoạn: 
+	1. Filtering: chọn ra một danh sách các feasible node để có thể chạy Pod(việc này có thể dựa trên resources có sẵn có node có đủ để đáp ứng cho Pod không).
+	2. Scoring: scheduler sẽ xếp hạng các nodes và chọn node phù hợp nhất để đặt Pod (highest scores). Nếu có nhiều hơn một node có điểm cao nhất bằng nhau thì sẽ chọn random.
+
+**Kubelet:** Kubelet là điểm duy nhất trên mỗi node chịu trách nhiệm cho việc kết nối với cluster. Kubelet tạo pod trên các nodes và scheduler sẽ chọn node nào để tạo pod. Kubetlet sẽ lấy các specs của pod được cung cấp bởi user để đảm bảo được rằng các container được running và healthy theo đúng specs đó. 
+**Kubeproxy:** kubeproxy là một proxy chạy trên mỗi node trong cluster, kubeproxy maintain network rules trên các node. Những rules này cho phép pod có thể kết nối với các network trong và bên ngoài cluster. Trong trường hợp, nếu ta sử dụng một network plugin để implements packet forwarding cho service và có chức năng tương tự như kubeproxy thì ta ko cần sử dụng kubeproxy trong cluster.

@@ -22,28 +22,21 @@
             }
           },
           {
-            "id": "100882341424439b",
+            "id": "b2ae511ebf5f7d09",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Tab mới"
-            }
-          },
-          {
-            "id": "695066024d07ba10",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.7"
+                "file": "Scaling Victoriametrics.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.7"
+              "icon": "lucide-file",
+              "title": "Scaling Victoriametrics"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -190,12 +183,29 @@
       "command-palette:Mở khay lệnh": false
     }
   },
-  "active": "b91073287972ada0",
+  "active": "b2ae511ebf5f7d09",
   "lastOpenFiles": [
+    "K8s/Scheduling.md",
+    "Scaling Victoriametrics.md",
+    "K8s/Kubeapi-server,kube-controller-manager,kube-scheduler.md",
+    "K8s/Kubespray install and issues that I catched.md",
+    "K8s/Scheduling/Manual Scheduling.md",
+    "K8s/Scheduling",
+    "K8s/README.md",
+    "K8s/ETCD.md",
+    "Pasted image 20250415093051.png",
+    "Pasted image 20250415092159.png",
+    "DSA/hashTable.cpp",
+    "DSA/hash-table.cpp",
+    "DSA/recurison.cpp",
+    "DSA/README.md",
+    "DSA/linkedlist.cpp",
+    "DSA/array.cpp",
+    "DSA/a.exe",
+    "DSA",
+    "K8s/images/Pasted image 20250411103537.png",
     "Hướng dẫn benchmark checkpoint firewall R81.10.md",
     "Cách tạo vm từ snapshot.md",
-    "K8s/README.md",
-    "K8s/Kubespray install and issues that I catched.md",
     "README.md",
     "Tìm hiểu về VictoriaMetrics.md",
     "Kubespray install and issues that I catched.md",
@@ -207,9 +217,6 @@
     "Image/Pasted image 20250210134726.png",
     "Image/Pasted image 20250210133645.png",
     "Image/Pasted image 20250210133527.png",
-    "Image/Pasted image 20250210133511.png",
-    "Image/Pasted image 20250210132540.png",
-    "Image/Pasted image 20250207110628.png",
     "DungCV.md",
     "Untitled",
     "Note Star.md",

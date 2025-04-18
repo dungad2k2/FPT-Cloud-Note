@@ -60,6 +60,15 @@ Với một pod đang chạy, làm sao để ta có thể kết nối với nó 
 
 Hình trên mô tả quá trình tạo một Deployment object trong K8s. Ta có thể thấy rằng khi chạy kubectl create command, nó tạo ra một deployment object mới bằng cách gửi một HTTP request đến K8s API server. K8s sau đó sẽ tạo một Pod object mới và thực hiện việc schedule và assign pod này cho worker node nào. Sau khi assign xong thì kubelet tại worker node sẽ thực hiện giao tiếp với container runtime để pull image và run container. 
 
+**Một số command tương tác với pod:**
+```
+##Xem pod đang được đặt ở node nào:
+kubectl get pods -o wide
+## Edit specs cho pods
+kubectl edit pod <POD>
+kubectl set image pod/redis redis=redis
+```
+
 ## Exposing app to the world
 
 Như ta đã biết từ trước mỗi Pod đều có riêng cho mình một IP nhưng IP này là IP internal trong cluster và nó không thể kết nối từ bên ngoài. Để làm cho pod có thể kết nối được ra bên ngoài ta cần phải expose nó ra bằng cách tạo một service object. Trong K8s, có rất nhiều loại service objects, một số loại chỉ expose pod trong phạm vi cluster một số loại thì có thể expose pod ra external. Một service có tên là LoadBalancer cung cấp một LB bên ngoài và external user có thể kết nối đến app thông qua public IP của LB này. 
@@ -72,3 +81,5 @@ Mặc dù K8s có thể cho phép ta tạo một object services có tên là Lo
 
 ![alt text](images/image9.png)
 
+ 
+ 
