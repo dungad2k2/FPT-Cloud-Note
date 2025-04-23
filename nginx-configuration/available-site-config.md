@@ -8,7 +8,7 @@ server {
   listen 8000 ssl;
 
 
-  server_name example.com;
+  server_name example.com;192,
 
   ssl_certificate     /home/buidung/cert/example.com.crt;
   ssl_certificate_key /home/buidung/cert/example.com.key;
