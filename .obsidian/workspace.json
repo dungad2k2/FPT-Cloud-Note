@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "K8s/Scheduling.md",
+                "file": "K8s/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Scheduling"
+              "title": "README"
             }
           }
         ],
@@ -185,11 +185,11 @@
   },
   "active": "b2ae511ebf5f7d09",
   "lastOpenFiles": [
+    "K8s/Scheduling.md",
     "K8s/README.md",
     "K8s/images/Pasted image 20250415093051.png",
     "K8s/images/Pasted image 20250418142436.png",
     "K8s/images/Pasted image 20250415092159.png",
-    "K8s/Scheduling.md",
     "K8s/Kubeapi-server,kube-controller-manager,kube-scheduler.md",
     "K8s/Kubespray install and issues that I catched.md",
     "Scaling Victoriametrics.md",
