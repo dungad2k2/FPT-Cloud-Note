@@ -1,0 +1,24 @@
+syntax = "proto3"; // Use the modern version 3 syntax
+
+package monitor.v1;
+
+// This tells the compiler where to put the generated Go code
+option go_package = "my-monitor/pkg/api/v1";
+
+// The Service Definition (The "Interface")
+service MonitorService {
+  // A simple RPC: Client sends a URL, Server returns a Status
+  rpc CheckWebsite (CheckRequest) returns (CheckResponse);
+}
+
+// The Request Message
+message CheckRequest {
+  string url = 1; // '1' is the unique field tag, used in binary encoding
+}
+
+// The Response Message
+message CheckResponse {
+  string url = 1;
+  string status = 2;
+  int32 latency_ms = 3;
+}
