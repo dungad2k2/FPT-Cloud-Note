@@ -1,0 +1,9 @@
+# How Prometheus TSDB Works
+- Prometheus uses a pull model to collect data for the TSDB. We define scrape targets, usually exporters or instrumented services that expose '/metrics', and Prometheus polls them at fixed intervals. Inside the TSDB, new samples first land in an in-memory headblock. For every scrape, Prometheus appends the samples to the relevant time series in this head block and records them in a write-ahead log (WAL) on disk. The WAL lets prometheus replay recent data after a crash, so we dont lose the latest scrapes. Once enough data accumulates or a configured time window passes, Prometheus cuts a new block on disk that contains compressed chunks of samples, a label index, and metadata about the block time range. Background compaction then merges smaller blocks into larger ones to keep both storage usage and query performance under control.
+
+![alt text](tsdb-steps.png)
+
+# Components of TSDB:
+## The Head Block:
+- The Head Block is the in-memory part of the database and the grey block are persistent block on disk which are immutable. An incoming sample first goes to the head block and stays into the memory for a while, which is then flushed to the disk and memory-mapped (the blue box). And when these memory mapped chunks or the in-memory chunks get old to the certain point, they are flushed to the disk as persistent blocks.  Further multiple blocks are merged as they get old and finally deleted after they go beyond the retention period. 
+- **m-map**(memory-mapped): is a POSIX-compliant system call that maps file or devices into the memory of a process. Functionally, it creates a correspondence between a segment of the process's virtual address space and a file on the disk -> So that the application can manipulated the file contents effectively as if they were an array 
