@@ -78,3 +78,56 @@
         Writer
     }
     ```
+# Go class 19: Composition
+- The fields and methods of an embedded struct are promoted to the level of the embedding structure.
+```
+type Pair struct {
+    Path string
+    Hash string
+}
+type PairWithLength struct{
+    Pair
+    Length int
+}
+
+pl := PairWithLength{Pair{"/usr", "0xfdfe"}, 123}
+fmt.Println(pl.Path, pl.Length)
+```
+- A struct can embed a pointer to another type, promotion of its fields and methods works the same way.
+```
+type Organ struct {
+	Name string
+	Weight int
+}
+type Organs []Organ
+func (s Organs) Len() int { return len(s)}
+func (s Organs) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
+} 
+type ByName struct {
+	Organs
+}
+type ByWeight struct {
+	Organs 
+}
+func (s ByName) Less (i, j int) bool {
+	return s.Organs[i].Name < s.Organs[j].Name
+}
+func (s ByWeight) Less (i, j int) bool {
+	return s.Organs[i].Weight < s.Organs[j].Weight
+}
+
+func main() {
+	s := []Organ{{"brain", 1340}, {"liver", 1494}, {"spleen", 162}}
+	sort.Sort(ByWeight{s})
+	fmt.Println(s)
+	sort.Sort(ByName{s})
+	fmt.Println(s)
+}
+```
+# Go class 20: Interfaces and Methods in Detail 
+
+- Nil interfaces: An interface variable is nil until initialized.
+- It really has two parts:
+  - a value or pointer of some type
+  - a pointer to type information so the correct actual method can be identified. 
