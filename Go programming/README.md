@@ -130,4 +130,19 @@ func main() {
 - Nil interfaces: An interface variable is nil until initialized.
 - It really has two parts:
   - a value or pointer of some type
-  - a pointer to type information so the correct actual method can be identified. 
+  - a pointer to type information so the correct actual method can be identified.
+# Go class 21: Concurrency 
+- Some definitions of concurrency:
+  - "Execution happens in some non-deterministic order"
+  - "Non sequential execution"
+- Patial order:
+  - "Non-deterministic" -> "Different behaviors on different runs, even with the same input". Example:
+    1.  {1, 2a, 2b, 3a, 3b, 4}
+    2.  {1, 2a, 3a, 2b, 3b, 4}
+    3.  {1, 2a, 3a, 3b, 2b, 4}
+    4.  {1, 3a, 3b, 2a, 2b, 4}
+    5.  {1, 3a, 2a, 3b, 2b, 4}
+- Concurrency vs Parallelism: 
+  - Concurrency: Parts of the program may execute independently in some non-deterministic (partial order). You can have concurrency with a single-core processor(think interrupt handling in the operating system).
+  - Parallelism: Parts of the program execute independently at the same time. Parallelism can happen only on a multi-core processor.
+  - Concurrency doesnt make the program faster but parrallelism does.
