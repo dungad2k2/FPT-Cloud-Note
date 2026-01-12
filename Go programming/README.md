@@ -131,7 +131,7 @@ func main() {
 - It really has two parts:
   - a value or pointer of some type
   - a pointer to type information so the correct actual method can be identified.
-# Go class 21: Concurrency 
+# Go class 22, 23 : Concurrency and Channels
 - Some definitions of concurrency:
   - "Execution happens in some non-deterministic order"
   - "Non sequential execution"
@@ -146,3 +146,26 @@ func main() {
   - Concurrency: Parts of the program may execute independently in some non-deterministic (partial order). You can have concurrency with a single-core processor(think interrupt handling in the operating system).
   - Parallelism: Parts of the program execute independently at the same time. Parallelism can happen only on a multi-core processor.
   - Concurrency doesnt make the program faster but parrallelism does.
+- In concurrency, only one go routine has access to the value at any given time. Dataraces cannot occur, by design. To  encourage this way of thinking we have reduced it to a slogan: `Do not communicate by sharing memory, instead share memory by communicating`. Goroutines are multiplexed onto multiple OS threads so if one should block, such as while waiting for I/O, others continue to run. 
+## Channel: 
+- Like `map` channels are allocated with `make` and the resulting values acts as a reference to an underlying data structure. If an optional parameter is provided, it sets the buffer size for the channel. The default is zero, for an unbuffered or synchronous channel 
+    ```
+        ci := make(chan int)
+        cj := make(chan int, 0) -> unbuffered channel
+        cs := make(chan *os.File, 100) -> buffered channel
+    ```
+- Receiver always block until there is a data to receive. If the channel is unbuffered, the sender blocks until the receiver has received the value. If the channel has a buffer, the sender blocks only until the value has been copied to the buffer, if buffer is full, this means waiting until some receiver has retrieved a value.
+- By default, channels are unbuffered: 
+  - the sender blocks until the receiver is ready. 
+  - the send always happens before the receive.
+  - the receive always returns before the send. 
+  - the sender and receiver are synchronized.
+    ![alt text](image-1.png)
+
+- Buffering allows the sender to send without waiting:
+  - the sender deposits its item and returns immediately
+  - the sender blocks only if the buffer is full
+  - the receiver blocks only if the buffer is empty
+    ![alt text](image-2.png)
+
+

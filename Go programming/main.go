@@ -1,23 +1,34 @@
 package main
 
-import (
-	"fmt"
-	// "os"
-	// "io"
-)
-type Shape interface{
-	Area() float64
+import "fmt"
+func generate(limit int, ch chan <- int){
+	for i := 2; i < limit; i++{
+		ch <- i
+	}
+	close(ch)
 }
-type Rectangle struct{
-	width, height float64
+func filter(src <-chan int, des chan <- int, prime int){
+	for i := range src {
+		if i % prime != 0{
+			des <- i
+		}
+	}
+	close(des)
 }
-func (r Rectangle) Area() float64{
-	return r.height * r.width
-}
-func CalculateArea(shape Shape) float64{
-	return shape.Area()
+func sieve(limit int){
+	ch := make(chan int)
+	go generate(limit, ch)
+	for {
+		prime, ok := <-ch
+		if !ok {
+			break
+		}
+		ch1 := make(chan int)
+		go filter(ch, ch1, prime)
+		ch = ch1 
+		fmt.Print(prime, " ")
+	}
 }
 func main() {
-	rect := Rectangle{width: 5, height: 7}
-	fmt.Println(CalculateArea(rect))
+	sieve(100)
 }
